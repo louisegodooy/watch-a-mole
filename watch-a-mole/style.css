@@ -1,0 +1,90 @@
+* {
+
+    /*margin 0- remove all outside margens, so there is no a gap around the elements.
+    padding: 0 - remove all inner padding from elements, so there iis no a blank space insise of the elements
+    box-sizing:borderbox- Set the box model of elements like 'border-box', which means that the width and height defined for an elemens includes the padding and border, 
+    instead of being added to them. This make sizing and positioning of the elements easier */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  
+  }
+  /*when you set the base font size to 62,5% thats means 1 rem will equal 10 pixels (since 62,5% of 16pixels equals 10 pixels)*/
+  :root {
+    font-size: 62.5%;
+  }
+  
+
+/* 100vh - vision height means viewport height (100vh means it'll take up the entire height of the browser window.) Its the same for the width - VW
+Display:Grid - its a container with grid, the you can orginize the children's elements in columns and rows. Using 'grid-template-columns' 
+and 'grid-template-rows, you'll define the numbers of columns and rows. */
+
+  body {
+    display: grid;
+    place-items: center;
+    margin: 0 auto;
+    width: 100vw;
+    height: 100vh;
+    
+    background-image: url("./assets/fundo.svg");
+
+    /*set the image which you'll used to be your background*/
+  }
+  
+  .content {
+    margin: 30rem auto 0; /*margin-top in 30rem as you'll see on figma. The hole must bem 300px from the top.*/
+    
+    display: grid;
+    width: 105rem;
+    
+    grid-template-columns: 1fr 1fr 1fr 1fr; /*it has 4 colums, which has 3 hole*/
+    place-items: center;
+  }
+  
+  .mole {           /*Each mole has 221px of width and 168px of height.*/
+    width: 22.1rem;
+    height: 16.8rem;
+    background-image: url("./assets/toupeira6.svg") ; /*a hole to each mole as background*/
+  }
+  
+  .animated {
+    animation: toupeira 0.7s infinite; /*name of the animation: toupeuira as I set in the @keyframes
+                                          0.7seconds of duration. Infinite means a loop
+                                           animation-interantion: How many times it'll repeat untill it be finished
+                                           I could take off the infinite and animation-interation, I'll  still have the same result*/
+    animation-delay: 5s;
+    animation-iteration-count: 1;
+  }
+  
+  .animated2 {
+    animation: toupeira 0.7s infinite;
+    animation-delay: 2s;
+    animation-iteration-count: 1;
+  }
+  
+  .animated3 {
+    animation: toupeira 0.7s infinite;
+    animation-delay: 10s;
+    animation-iteration-count: 1;
+  }
+  
+  @keyframes toupeira {
+    0% {
+        background-image: url("./assets/toupeira1.svg");
+    }
+    20% {
+        background-image: url("./assets/toupeira2.svg");
+    }
+    40% {
+        background-image: url("./assets/toupeira3.svg");
+    }
+    60% {
+        background-image: url("./assets/toupeira4.svg");
+    }
+    80% {
+        background-image: url("./assets/toupeira5.svg");
+    }
+    100% {
+        background-image: url("./assets/toupeira6.svg");
+    }
+  }
